@@ -1,0 +1,45 @@
+{
+	"$schema": "https://cmake.org/cmake/help/latest/_downloads/3e2d73bff478d88a7de0de736ba5e361/schema.json",
+	"version": 8,
+	"include": [
+		"preset_windows.json"
+	],
+	"configurePresets": [
+		{
+			"name": "windows-ninja",
+			"hidden": true,
+			"inherits": [ "windows", "windows-vcpkg" ],
+			"binaryDir": "${sourceDir}/binary/config",
+			"generator": "Ninja",
+			"cacheVariables": {
+				"CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+				"CMAKE_C_COMPILER": "clang-cl",
+				"CMAKE_CXX_COMPILER": "clang-cl"
+			}
+		},
+		{
+			"name": "windows-ninja-dbg",
+			"displayName": "Windows (Ninja) Arch: Host-CPU | Config: Debug",
+			"inherits": [ "windows-ninja" ],
+			"cacheVariables": {
+				"CMAKE_BUILD_TYPE": "Debug"
+			}
+		},
+		{
+			"name": "windows-ninja-reldbg",
+			"displayName": "Windows (Ninja) Arch: Host-CPU | Config: RelWithDebInfo",
+			"inherits": [ "windows-ninja" ],
+			"cacheVariables": {
+				"CMAKE_BUILD_TYPE": "RelWithDebInfo"
+			}
+		},
+		{
+			"name": "windows-ninja-rel",
+			"displayName": "Windows (Ninja) Arch: Host-CPU | Config: Release",
+			"inherits": [ "windows-ninja" ],
+			"cacheVariables": {
+				"CMAKE_BUILD_TYPE": "Release"
+			}
+		}
+	]
+}

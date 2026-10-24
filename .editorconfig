@@ -1,0 +1,14 @@
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+indent_style = tab
+indent_size = 2
+
+[CMakeLists.txt]
+indent_size = 4
+
+[*.{c,h,cpp,hpp,cppm,tpp,inl}]
+indent_size = 4

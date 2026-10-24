@@ -1,0 +1,9 @@
+CompileFlags:
+  CompilationDatabase: "./binary/config"
+
+Completion:
+  ArgumentLists: Delimiters
+  HeaderInsertion: Never
+
+Diagnostics:
+  UnusedIncludes: None

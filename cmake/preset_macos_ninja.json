@@ -1,0 +1,48 @@
+{
+	"$schema": "https://cmake.org/cmake/help/latest/_downloads/3e2d73bff478d88a7de0de736ba5e361/schema.json",
+	"version": 8,
+	"include": [
+		"preset_macos.json"
+	],
+	"configurePresets": [
+		{
+			"name": "macos-ninja",
+			"hidden": true,
+			"inherits": [ "macos", "macos-vcpkg" ],
+			"binaryDir": "${sourceDir}/binary/config",
+			"generator": "Ninja",
+			"cacheVariables": {
+				"CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+				"CMAKE_C_COMPILER": "clang",
+				"CMAKE_CXX_COMPILER": "clang++"
+			}
+		},
+		{
+			"name": "macos-ninja-arm64-dbg",
+			"displayName": "MacOS (Ninja) Arch: arm64 | Config: Debug",
+			"inherits": [ "macos-ninja" ],
+			"cacheVariables": {
+				"CMAKE_OSX_ARCHITECTURES": "arm64",
+				"CMAKE_BUILD_TYPE": "Debug"
+			}
+		},
+		{
+			"name": "macos-ninja-arm64-reldbg",
+			"displayName": "MacOS (Ninja) Arch: arm64 | Config: RelWithDebInfo",
+			"inherits": [ "macos-ninja" ],
+			"cacheVariables": {
+				"CMAKE_OSX_ARCHITECTURES": "arm64",
+				"CMAKE_BUILD_TYPE": "RelWithDebInfo"
+			}
+		},
+		{
+			"name": "macos-ninja-arm64-rel",
+			"displayName": "MacOS (Ninja) Arch: arm64 | Config: Release",
+			"inherits": [ "macos-ninja" ],
+			"cacheVariables": {
+				"CMAKE_OSX_ARCHITECTURES": "arm64",
+				"CMAKE_BUILD_TYPE": "Release"
+			}
+		}
+	]
+}

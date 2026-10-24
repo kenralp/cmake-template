@@ -1,0 +1,35 @@
+cmake_minimum_required(VERSION 3.28)
+
+project(MY_PROJECT
+	VERSION 0.0.1
+	DESCRIPTION "MY_DESCRIPTION"
+)
+
+add_executable(MY_PROJECT
+	src/main.cpp
+)
+
+set_target_properties(MY_PROJECT
+	PROPERTIES
+		C_STANDARD 23
+		C_STANDARD_REQUIRED ON
+
+		CXX_STANDARD 20
+		CXX_STANDARD_REQUIRED ON
+
+		RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/binary
+
+		OUTPUT_NAME_DEBUG 		   "MY_PROJECT-dbg"
+		OUTPUT_NAME_RELWITHDEBINFO "MY_PROJECT-reldbg"
+		OUTPUT_NAME_RELEASE 	   "MY_PROJECT"
+)
+
+target_include_directories(MY_PROJECT
+	PRIVATE
+		src
+)
+
+target_precompile_headers(MY_PROJECT
+	PRIVATE
+		<iostream>
+)
