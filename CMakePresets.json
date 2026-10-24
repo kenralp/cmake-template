@@ -7,6 +7,7 @@
 		"patch": 0
 	},
 	"include": [
-		"cmake/preset_macos_ninja.json"
+		"cmake/preset_macos_ninja.json",
+		"cmake/preset_windows_ninja.json"
 	]
 }
