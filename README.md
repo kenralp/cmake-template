@@ -1,4 +1,2 @@
-# cmake-template
-> Started: MONTH DAY, YEAR.
-
-MY_DESCRIPTION
+# MY_PROJECT
+> Started: _Unknown_
