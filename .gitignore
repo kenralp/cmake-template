@@ -5,3 +5,5 @@ __cmake_systeminformation
 .cache
 
 .DS_Store
+
+.vs
